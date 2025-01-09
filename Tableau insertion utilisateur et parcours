@@ -1,0 +1,35 @@
+Déclarez un tableau de 10 entiers et un pointeur. 
+- Demandez à l'utilisateur d'entrer un nombre, puis utilisez le pointeur pour rechercher cet élément dans le tableau. 
+- Affichez un message indiquant si l'élément est présent ou non.
+
+
+
+#include <stdio.h>
+
+int main() {
+    int tableau[10] = {5, 12, 7, 9, 20, 15, 3, 8, 11, 14}; // Initialisation du tableau avec 10 entiers
+    int *pointeur = tableau; // Le pointeur pointe sur le premier élément
+    int nombre, i;
+    int trouve = 0; // Variable pour indiquer si le nombre est trouvé
+
+    // Demande à l'utilisateur d'entrer un nombre
+    printf("Entrez un nombre à rechercher : ");
+    scanf("%d", &nombre);
+
+    // Parcours du tableau en utilisant le pointeur
+    for (i = 0; i < 10; i++) {
+        if (*(pointeur + i) == nombre) {
+            trouve = 1; // Le nombre est trouvé
+            break;
+        }
+    }
+
+    // Affichage du résultat
+    if (trouve) {
+        printf("Le nombre %d est présent dans le tableau à %d.\n", nombre, i);
+    } else {
+        printf("Le nombre %d n'est pas présent dans le tableau.\n", nombre);
+    }
+
+    return 0;
+}
