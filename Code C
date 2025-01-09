@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int tableau[5] = {10, 20, 30, 40, 50}; // Déclaration et initialisation du tableau
+    int *pointeur = tableau; // Le nom du tableau est un pointeur vers son premier élément
+
+    // Parcours et affichage des éléments du tableau en utilisant le pointeur
+    for (int i = 0; i < 5; i++) {
+        printf("Élément %d : %d\n", i, *(pointeur + i));
+    }
+
+    return 0;
+}
