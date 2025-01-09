@@ -1,0 +1,49 @@
+Déclarez deux tableaux de 5 entiers et initialisez-les avec des valeurs au choix.
+- Créez un troisième tableau pour stocker les résultats de l'addition des éléments correspondants des deux premiers tableaux.
+- Utilisez des pointeurs pour parcourir les deux tableaux d'origine et additionner leurs éléments correspondants.
+- Affichez les deux tableaux d'origine et le tableau résultant de l'addition.
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    // Déclaration et initialisation des deux premiers tableaux
+    int tableau1[5] = {1, 2, 3, 4, 5};
+    int tableau2[5] = {10, 20, 30, 40, 50};
+
+    // Déclaration du troisième tableau pour stocker les résultats
+    int resultat[5];
+
+    // Pointeurs pour parcourir les tableaux
+    int *p1 = tableau1;
+    int *p2 = tableau2;
+    int *pRes = resultat;
+
+    // Parcours des tableaux et addition des éléments correspondants
+    for (int i = 0; i < 5; i++) {
+        *(pRes + i) = *(p1 + i) + *(p2 + i);
+    }
+
+    // Affichage des trois tableaux
+    printf("Tableau 1 : ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(p1 + i));
+    }
+    printf("\n");
+
+    printf("Tableau 2 : ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(p2 + i));
+    }
+    printf("\n");
+
+    printf("Resultat (somme) : ");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", *(pRes + i));
+    }
+    printf("\n");
+
+    return 0;
+}
